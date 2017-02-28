@@ -1,0 +1,26 @@
+<durum>
+
+  <sicaklik>
+    <min>-10</min> <max>5</max>
+  </sicaklik>
+
+  <ruzgar>
+    <min></min>    <max></max>
+  </ruzgar>
+
+  <mesaj> "Kalın giyin bence, donarsın bu soğukta..." </mesaj>
+
+</durum>
+<durum>
+
+  <sicaklik>
+    <min></min> <max></max>
+  </sicaklik>
+
+  <ruzgar>
+    <min>10</min>    <max>100</max>
+  </ruzgar>
+
+  <mesaj> "Bugün hava felaket rüzgarlı olacak, dikkatli ol uçma havaya..." </mesaj>
+
+</durum>
