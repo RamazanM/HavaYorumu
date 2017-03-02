@@ -1,8 +1,6 @@
 /*
 Konya için link: http://www.myweather2.com/developer/forecast.ashx?uac=Xi6lMrUzQg&output=xml&query=37.990073,32.516361
 */
-#include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 static size_t veriYaz(void *ptr, size_t boyut,size_t elemanSayisi,void *akis){  //CURL'da veriler buffer'lı bir şekilde yazıldığı için veri yazma fonksiyonu oluşturmalıyız.
@@ -10,7 +8,7 @@ static size_t veriYaz(void *ptr, size_t boyut,size_t elemanSayisi,void *akis){  
   return yazilan; //Başarıyla yazılan eleman sayısını döndürür.
 }
 
-int main() {
+void HavaDurumuCek(){
   CURL *curl_tutucu;                            //CURL ayarlamalarını tutacak olan CURL pointer'ı
   static const char *dosyaAdi="havadurumu.xml"; //Verilerin yazılacak olduğu dosyanın adı
   FILE *dosya;                                  //Dosya değişkeni.
@@ -27,6 +25,6 @@ int main() {
     fclose(dosya);  //Dosyayı kapat.
   }
   curl_easy_cleanup(curl_tutucu); //Tutucu'yu temizle.
-  printf("Done");
-  return 0;
+  printf("Hava Durumu Güncellendi.\n");
+
 }

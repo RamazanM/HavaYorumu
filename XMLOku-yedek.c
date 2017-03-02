@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include <mxml.h>
-#include "XMLHavaDurumuAl.c"
 
 struct Hava{
   int sicaklik; //Şu anki sıcaklık değeri
@@ -22,26 +21,21 @@ struct  Durum{  //durum isimli yapımız
 durum *durumlar;
 
 int HavaDurumunuDoldur(){
-  HavaDurumuCek();
   FILE *dosya;
+
+
   static const char *dosyaAdi="havadurumu.xml"; //Verilerin okunacak olduğu dosyanın adı
   mxml_node_t *anaNode;
   dosya=fopen(dosyaAdi,"r");
-  if(!dosya)printf("Dosya Okuma Hatası\n");
   anaNode=mxmlLoadFile(NULL,dosya,MXML_TEXT_CALLBACK);
   mxml_node_t *deger;
 
   deger=mxmlFindPath(anaNode,"weather/curren_weather/temp/");
-  if(mxmlGetText(deger,0)!=NULL)
-    hava.sicaklik=atoi(mxmlGetText(deger,0));
-  else printf("Hata:Sıcaklık okunamadı(İnternet Bağlantınızı Kontrol Edin)\n");
+  hava.sicaklik=atoi(mxmlGetText(deger,0));
   deger=mxmlFindPath(anaNode,"weather/curren_weather/wind/speed/");
-  if(mxmlGetText(deger,0)!=NULL)
-    hava.ruzgar=atoi(mxmlGetText(deger,0));
+  hava.ruzgar=atoi(mxmlGetText(deger,0));
   deger=mxmlFindPath(anaNode,"weather/curren_weather/weather_code/");
-  if(mxmlGetText(deger,0)!=NULL)
-    hava.durum=atoi(mxmlGetText(deger,0));
-  printf("Denemne:%d\n",hava.sicaklik);
+  hava.durum=atoi(mxmlGetText(deger,0));
 }
 
 int DurumlariDoldur(){
@@ -64,45 +58,42 @@ int DurumlariDoldur(){
   mxml_node_t *tempNode;     //Node'lar arasında dikey gezmemizi sağlayacak geçici node.
 
   int i; //Sayaç değişkeni
-  durum *seciliDurum; //Durum dizisini doldurmak için elimde tuttuğum geçici durum değişkeni.
-  seciliDurum=durumlar;
   for(i=0;i<toplamDurum;i++){  //Tüm durumları for ile gez
 
-    seciliDurum->id=i;  //Durum id'si sayaça eşit olacak.
+    durum seciliDurum; //Durum dizisini doldurmak için elimde tuttuğum geçici durum değişkeni.
+    seciliDurum.id=i;  //Durum id'si sayaça eşit olacak.
 
     tempNode=mxmlFindPath(seciliNode,"sicaklik/min/");         //XML Dosyasından çekilen değerleri gerekli değişkenlere ata.
     if(mxmlGetText(tempNode,0)!=NULL)
-     seciliDurum->min_sicaklik=atoi(mxmlGetText(tempNode,0));
+     seciliDurum.min_sicaklik=atoi(mxmlGetText(tempNode,0));
 
     tempNode=mxmlFindPath(seciliNode,"sicaklik/max/");
     if(mxmlGetText(tempNode,0)!=NULL)
-    seciliDurum->max_sicaklik=atoi(mxmlGetText(tempNode,0));
+    seciliDurum.max_sicaklik=atoi(mxmlGetText(tempNode,0));
 
     tempNode=mxmlFindPath(seciliNode,"ruzgar/min/");
     if(mxmlGetText(tempNode,0)!=NULL)
-    seciliDurum->min_ruzgar_hizi=atoi(mxmlGetText(tempNode,0));
+    seciliDurum.min_ruzgar_hizi=atoi(mxmlGetText(tempNode,0));
 
     tempNode=mxmlFindPath(seciliNode,"ruzgar/max/");
     if(mxmlGetText(tempNode,0)!=NULL)
-    seciliDurum->max_ruzgar_hizi=atoi(mxmlGetText(tempNode,0));
+    seciliDurum.max_ruzgar_hizi=atoi(mxmlGetText(tempNode,0));
 
     tempNode=mxmlFindPath(seciliNode,"mesaj/");
-    seciliDurum->mesaj=(char*)mxmlGetText(tempNode,0);
+    seciliDurum.mesaj=(char*)mxmlGetText(tempNode,0);
+    *(durumlar+i)=seciliDurum;
 
-    seciliNode=seciliNode->next;          //Bir sonraki node'a geç.
-    seciliDurum->next=seciliDurum+1;      //Next node'unu bir sonraki durum node'una eşitle.
-    seciliDurum=seciliDurum->next;        //Bir sonraki durumu seç.
+    seciliNode=seciliNode->next;
+    seciliDurum=*(seciliDurum.next);                         //Bir sonraki node'a geç.
   }
 }
 
  int main(){
    HavaDurumunuDoldur();
    DurumlariDoldur();
-   while (durumlar->next!=NULL) {
-     printf("%s\n",durumlar->mesaj );
-     durumlar=durumlar->next;
-   }
-
-
+   durum *seciliDurum=durumlar;
+   printf("%s\n",seciliDurum->mesaj );
+   seciliDurum=seciliDurum->next;
+   printf("%s\n",seciliDurum->mesaj );
 
    }
