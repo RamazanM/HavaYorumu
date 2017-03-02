@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include "XMLOku.c"
 /*
   *http://www.myweather2.com benzeri bir siteden o anki/günki hava durumu değerleri (sıcaklık ve rüzgar hızı) çekilecek.
 
@@ -16,13 +16,12 @@
 
 
 
-struct  durum{  //durum isimli yapımız
-  int id,         //id'si
-  int min_sicaklik,   //kontrol edilecek minimum sıcaklık değeri, NULL ise rüzgar hızını kontrol et
-  int max_sicaklik,   //kontrol edilecek maksimum sıcaklık değeri, NULL ise rüzgar hızını kontrol et
-  int min_ruzgar_hizi,//kontrol edilecek rüzgar hızı değeri, "     "        "    "     "
-  int max_ruzgar_hizi,//kontrol edilecek rüzgar hızı değeri, "     "        "    "     "
-  char mesaj[100];
-  durum * next    //bir sonraki durum node'unun pointer'ı.
-};
-typedef struct durum durum;
+int main(int argc, char const *argv[]) {
+  HavaDurumunuDoldur();
+  DurumlariDoldur();
+  while (durumlar->next!=NULL) {
+    printf("%s\n",durumlar->mesaj );
+    durumlar=durumlar->next;
+  }
+  return 0;
+}

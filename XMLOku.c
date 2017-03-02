@@ -1,4 +1,3 @@
-#include<stdio.h>
 #include <mxml.h>
 #include "XMLHavaDurumuAl.c"
 
@@ -94,15 +93,3 @@ int DurumlariDoldur(){
     seciliDurum=seciliDurum->next;        //Bir sonraki durumu seç.
   }
 }
-
- int main(){
-   HavaDurumunuDoldur();
-   DurumlariDoldur();
-   while (durumlar->next!=NULL) {
-     printf("%s\n",durumlar->mesaj );
-     durumlar=durumlar->next;
-   }
-
-
-
-   }
