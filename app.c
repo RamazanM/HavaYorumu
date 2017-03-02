@@ -5,8 +5,9 @@
 
   *Şartları belirttiğim bir xml dosyası olacak (Şartlar alttaki durum structındaki gibi olacak).
 
-  *http://xmlsoft.org/examples/index.html yukarıdaki API'den ve yukarıda belirtilen şartlar xml'inden gelen verileri
-   kullanabilmek için libxml2 kütüphanesi kullanılacak.
+  *https://www.msweet.org/documentation/project3/Mini-XML.html#mxml_node_s
+   yukarıdaki API'den ve yukarıda belirtilen şartlar xml'inden gelen verileri
+   kullanabilmek için minixml kütüphanesi kullanılacak.
 
   *https://developer.gnome.org/gtk3/stable/index.html Grafiksel arayüz için GTK+ kullanılacak.
 
@@ -23,5 +24,23 @@ int main(int argc, char const *argv[]) {
     printf("%s\n",durumlar->mesaj );
     durumlar=durumlar->next;
   }
+
+while(durumlar->next!=NULL){
+  if( hava.sicaklik<=durumlar->max_sicaklik &&
+      hava.sicaklik>=durumlar->min_sicaklik ){
+
+        if(durumlar->min_ruzgar_hizi == NULL && durumlar->max_ruzgar_hizi == NULL){
+          //Sadece sıcaklık şartı var
+        }
+        else{
+          //Hem sıcaklık hem rüzgar şartı var
+        }
+      }
+    else{
+
+    }
+
+}
+
   return 0;
 }
