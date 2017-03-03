@@ -19,28 +19,44 @@
 
 int main(int argc, char const *argv[]) {
   HavaDurumunuDoldur();
+  printf("Deneme\n" );
   DurumlariDoldur();
-  while (durumlar->next!=NULL) {
-    printf("%s\n",durumlar->mesaj );
-    durumlar=durumlar->next;
-  }
 
-while(durumlar->next!=NULL){
+  durum *uygunSartlar=(durum*)malloc(sizeof(durum));
+  durum *gezici=(durum*)malloc(sizeof(durum));
+
+
+do {
   if( hava.sicaklik<=durumlar->max_sicaklik &&
-      hava.sicaklik>=durumlar->min_sicaklik ){
+      hava.sicaklik>=durumlar->min_sicaklik &&
 
-        if(durumlar->min_ruzgar_hizi == NULL && durumlar->max_ruzgar_hizi == NULL){
-          //Sadece sıcaklık şartı var
-        }
-        else{
-          //Hem sıcaklık hem rüzgar şartı var
-        }
+      hava.ruzgar<=durumlar->max_ruzgar_hizi &&
+      hava.ruzgar>=durumlar->min_ruzgar_hizi){
+        //Hem sıcaklık hem rüzgar şartları sağlandıysa
+        *gezici=*durumlar;                          //Durumlar değişkenini kopyala
+        gezici->next=(durum*)malloc(sizeof(durum)); //Gezici pointer'ın next'inde yer ayır
+        uygunSartlar=gezici;                        //Uygun Şartlar dizisine geziciyi ata
+        gezici=uygunSartlar->next;                  //geziciyi uygun şartların bir sonraki elemanı yap.
       }
-    else{
+  else if(hava.sicaklik<=durumlar->max_sicaklik &&
+          hava.sicaklik>=durumlar->min_sicaklik){
+            //Sadece sıcaklık şartları sağlandıysa
+            *gezici=*durumlar;
+            gezici->next=(durum*)malloc(sizeof(durum));
+            uygunSartlar=gezici;
+            gezici=uygunSartlar->next;
+          }
+  else if(hava.ruzgar<=durumlar->max_ruzgar_hizi &&
+          hava.ruzgar>=durumlar->min_ruzgar_hizi){
+            //Sadece rüzgar şartları sağlandıysa
+            *gezici=*durumlar;
+            gezici->next=(durum*)malloc(sizeof(durum));
+            uygunSartlar=gezici;
+            gezici=uygunSartlar->next;
+          }
+ durumlar=durumlar->next;
 
-    }
-
-}
+} while(durumlar->next!=NULL);
 
   return 0;
 }

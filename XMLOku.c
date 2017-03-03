@@ -21,6 +21,7 @@ struct  Durum{  //durum isimli yapımız
 durum *durumlar;
 
 int HavaDurumunuDoldur(){
+  //printf("Deneme\n" );
   HavaDurumuCek();
   FILE *dosya;
   static const char *dosyaAdi="havadurumu.xml"; //Verilerin okunacak olduğu dosyanın adı
@@ -82,4 +83,5 @@ int DurumlariDoldur(){
     seciliNode=seciliNode->next; //Bir sonraki node'a geç.
 
   }
+
 }
