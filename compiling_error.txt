@@ -1,0 +1,2 @@
+/home/ramazan/Belgeler/HavaYorumu/GUI.c:1:21: fatal error: gtk/gtk.h: Böyle bir dosya ya da dizin yok
+compilation terminated.
