@@ -1,0 +1,48 @@
+0,Sunny skies,Clear skies,Sunny.gif,Clear.gif
+1,Partly Cloudy skies,Partly Cloudy skies,PartlyCloudyDay.gif,PartlyCloudyNight.gif
+2,Cloudy skies,Cloudy skies,Cloudy.gif,Cloudy.gif
+3,Overcast skies,Overcast skies,Overcast.gif,Overcast.gif
+10,Mist,Mist,Mist.gif,Mist.gif
+21,Patchy rain possible,Patchy rain possible,OccLightRain.gif,OccLightRain.gif
+22,Patchy snow possible,Patchy snow possible,IsoSleetSwrsDay.gif,IsoSleetSwrsNight.gif
+23,Patchy sleet possible,Patchy sleet possible,OccLightSleet.gif,OccLightSleet.gif
+24,Patchy freezing drizzle possible,Patchy freezing drizzle possible,FreezingDrizzle.gif,FreezingDrizzle.gif
+29,Thundery outbreaks possible,Thundery outbreaks possible,PartCloudRainThunderDay.gif,PartCloudRainThunderNight.gif
+38,Blowing snow,Blowing snow,ModSnow.gif,ModSnow.gif
+39,Blizzard,Blizzard,Blizzard.gif,Blizzard.gif
+45,Fog,Fog,Fog.gif,Fog.gif
+49,Freezing fog,Freezing fog,FreezingFog.gif,FreezingFog.gif
+50,Patchy light drizzle,Patchy light drizzle,IsoRainSwrsDay.gif,IsoRainSwrsNight.gif
+51,Light drizzle,Light drizzle,OccLightRain.gif,OccLightRain.gif
+56,Freezing drizzle,Freezing drizzle,FreezingDrizzle.gif,FreezingDrizzle.gif
+57,Heavy freezing drizzle,Heavy freezing drizzle,FreezingDrizzle.gif,FreezingDrizzle.gif
+60,Patchy light rain,Patchy light rain,OccLightRain.gif,OccLightRain.gif
+61,Light rain,Light rain,ModRain.gif,ModRain.gif
+62,Moderate rain at times,Moderate rain at times,ModRainSwrsDay.gif,ModRainSwrsNight.gif
+63,Moderate rain,Moderate rain,ModRain.gif,ModRain.gif
+64,Heavy rain at times,Heavy rain at times,HeavyRainSwrsDay.gif,HeavyRainSwrsNight.gif
+65,Heavy rain,Heavy rain,HeavyRain.gif,HeavyRain.gif
+66,Light freezing rain,Light freezing rain,FreezingRain.gif,FreezingRain.gif
+67,Moderate or heavy freezing rain,Moderate or heavy freezing rain,FreezingRain.gif,FreezingRain.gif
+68,Light sleet,Light sleet,ModSleet.gif,ModSleet.gif
+69,Moderate or heavy sleet,Moderate or heavy sleet,HeavySleet.gif,HeavySleet.gif
+70,Patchy light snow,Patchy light snow,OccLightSnow.gif,OccLightSnow.gif
+71,Light snow,Light snow,OccLightSnow.gif,OccLightSnow.gif
+72,Patchy moderate snow,Patchy moderate snow,ModSnow.gif,ModSnow.gif
+73,Moderate snow,Moderate snow,ModSnow.gif,ModSnow.gif
+74,Patchy heavy snow,Patchy heavy snow,HeavySnowSwrsDay.gif,HeavySnowSwrsNight.gif
+75,Heavy snow,Heavy snow,HeavySnow.gif,HeavySnow.gif
+79,Ice pellets,Ice pellets,FreezingRain.gif,FreezingRain.gif
+80,Light rain shower,Light rain shower,IsoRainSwrsDay.gif,IsoRainSwrsNight.gif
+81,Moderate or heavy rain shower,Moderate or heavy rain shower,ModRainSwrsDay.gif,ModRainSwrsNight.gif
+82,Torrential rain shower,Torrential rain shower,HeavyRain.gif,HeavyRain.gif
+83,Light sleet showers,Light sleet showers,ModSleetSwrsDay.gif,ModSleetSwrsNight.gif
+84,Moderate or heavy sleet showers,Moderate or heavy sleet showers,ModSleetSwrsDay.gif,ModSleetSwrsNight.gif
+85,Light snow showers,Light snow showers,IsoSnowSwrsDay.gif,IsoSnowSwrsNight.gif
+86,Moderate or heavy snow showers,Moderate or heavy snow showers,ModSnowSwrsDay.gif,ModSnowSwrsNight.gif
+87,Light showers of ice pellets,Light showers of ice pellets,FreezingRain.gif,FreezingRain.gif
+88,Moderate or heavy showers of ice pellets,Moderate or heavy showers of ice pellets,FreezingRain.gif,FreezingRain.gif
+91,Patchy light rain with thunder,Patchy light rain with thunder,PartCloudRainThunderDay.gif,PartCloudRainThunderNight.gif
+92,Moderate or heavy rain with thunder,Moderate or heavy rain with thunder,CloudRainThunder.gif,CloudRainThunder.gif
+93,Patchy light snow with thunder,Patchy light snow with thunder,PartCloudSleetSnowThunderDay.gif,PartCloudSleetSnowThunderNight.gif
+94,Moderate or heavy snow with thunder,Moderate or heavy snow with thunder,CloudSleetSnowThunder.gif,CloudSleetSnowThunder.gif
