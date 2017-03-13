@@ -13,6 +13,8 @@
 
    Belirtilen hava şartları doğrultusunda rastgele mesajlar sunan uygulama.
 
+       gcc app.c -o deneme.exe -lcurl -lmxml
+       gcc `pkg-config --cflags gtk+-3.0` GUI.c -o Gui.exe `pkg-config --libs gtk+-3.0`
 */
 
 
